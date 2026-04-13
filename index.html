@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>Курс психолога</title>
+    <!-- Подключаем шрифты Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Pattaya&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poiret+One&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet">
+    <!-- Основной шрифт Inter для остального текста -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: #ccae8d;
+            font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            color: #000000;
+            line-height: 1.4;
+            padding: 20px 16px;
+        }
+
+        .feed {
+            max-width: 600px;
+            margin: 0 auto;
+            background-color: #ccae8d;
+        }
+
+        .block {
+            padding: 24px 20px;
+            background: transparent;
+        }
+
+        /* Картинка на всю ширину контейнера, высота автоматически */
+        .main-image {
+            width: 100%;
+            display: block;
+            margin: 0 auto 0 auto;
+            border-radius: 24px;
+        }
+
+        .first-block {
+            border-top-left-radius: 32px;
+            border-top-right-radius: 32px;
+            text-align: center; /* центрирование всего содержимого первого блока */
+        }
+
+        .last-block {
+            border-bottom-left-radius: 32px;
+            border-bottom-right-radius: 32px;
+        }
+
+        /* Стили для первого блока с разными шрифтами */
+        .title-pattaya {
+            font-family: 'Pattaya', cursive;
+            font-size: 2rem;
+            font-weight: normal;
+            margin-bottom: 0;
+            line-height: 1.2;
+        }
+
+        .title-roboto {
+            font-family: 'Roboto Condensed', sans-serif;
+            font-size: 2rem;
+            font-weight: 700;
+            margin-bottom: 12px;
+        }
+
+        .subtitle-poiret {
+            font-family: 'Poiret One', cursive;
+            font-size: 1.1rem;
+            font-weight: 500;
+            margin-bottom: 16px;
+        }
+
+        .text-great {
+            font-family: 'Great Vibes', cursive;
+            font-size: 1.2rem;
+            margin-top: 16px;
+        }
+
+        /* Общие стили для остальных блоков */
+        h1, h2, h3 {
+            font-weight: 700;
+            line-height: 1.2;
+            margin-bottom: 12px;
+        }
+
+        h1 {
+            font-size: 2rem;
+        }
+
+        h2 {
+            font-size: 1.6rem;
+        }
+
+        h3 {
+            font-size: 1.3rem;
+            margin-top: 20px;
+            margin-bottom: 10px;
+        }
+
+        .quote {
+            font-style: italic;
+            background: #f5efe0;
+            padding: 12px 16px;
+            border-radius: 24px;
+            margin: 16px 0;
+            font-size: 0.95rem;
+            border-left: 4px solid #d97a2b;
+        }
+
+        .list {
+            margin: 12px 0;
+            padding-left: 20px;
+        }
+
+            .list li {
+                margin-bottom: 8px;
+            }
+
+        .important {
+            background: #f5efe0;
+            padding: 16px;
+            border-radius: 24px;
+            margin-top: 20px;
+        }
+
+            .important p {
+                font-weight: 600;
+                margin-bottom: 8px;
+            }
+
+            .important ul {
+                padding-left: 20px;
+            }
+
+        hr {
+            margin: 16px 0;
+            border: 0;
+            height: 1px;
+            background: #e0d5c0;
+        }
+
+        .buttons {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+            margin-top: 16px;
+        }
+
+        button {
+            padding: 16px 24px;
+            font-size: 1rem;
+            font-weight: 600;
+            border-radius: 60px;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            text-align: center;
+            border: none;
+            font-family: inherit;
+        }
+
+        .btn-primary {
+            background: linear-gradient(95deg, #d97a2b, #e8923a);
+            color: white;
+        }
+
+        .btn-secondary {
+            background: transparent;
+            border: 2px solid #d97a2b;
+            color: #d97a2b;
+        }
+
+        .btn-outline {
+            background: transparent;
+            border: 1px solid #ccc;
+            color: #555;
+        }
+
+            .btn-primary:hover, .btn-secondary:hover, .btn-outline:hover {
+                transform: scale(1.02);
+                opacity: 0.9;
+            }
+
+        footer {
+            text-align: center;
+            margin-top: 24px;
+            font-size: 0.8rem;
+            color: #7a6a5a;
+        }
+
+        .fade-up {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.6s ease, transform 0.6s ease;
+        }
+
+            .fade-up.visible {
+                opacity: 1;
+                transform: translateY(0);
+            }
+    </style>
+    <script src="https://st.max.ru/js/max-web-app.js"></script>
+</head>
+<body>
+    <div class="feed">
+        <!-- КАРТИНКА на всю ширину, без поворота -->
+        <img src="main_image.png" alt="Психолог" class="main-image fade-up" id="mainImg">
+
+        <!-- БЛОК 1 с кастомными шрифтами и центрированием -->
+        <div class="block first-block fade-up" id="block1">
+            <div class="title-pattaya">это</div>
+            <div class="title-roboto">про тебя</div>
+            <div class="subtitle-poiret">Курс для женщин, которые запутались в отношениях и устали жить в состоянии «терпеть или уходить»</div>
+            <div class="text-great">Этот курс не для всех!<br>Он для тех, кто готов(а) взять на себя ответственность, а не продолжать надеяться, что всё решится само.</div>
+        </div>
+
+        <!-- БЛОК 2 -->
+        <div class="block fade-up" id="block2">
+            <h2>«Терпеть нельзя расстаться»</h2>
+            <p style="font-weight: 500;">Как понять, где поставить точку — и перестать жить в сомнениях</p>
+            <p style="margin-top: 16px;"><strong>Здесь вы разберётесь:</strong></p>
+            <ul class="list">
+                <li>— что на самом деле происходит в ваших отношениях</li>
+                <li>— есть ли у них шанс или это уже тупик</li>
+                <li>— и как принять решение без самообмана</li>
+            </ul>
+            <div class="important">
+                <p><strong>ВАЖНО:</strong></p>
+                <ul>
+                    <li>✔ Только научный подход, так как я психолог с научной степенью. Без эзотерики и кармы рода. Объясню сочетание нейробиологии и вашего поведения в жизни;</li>
+                    <li>✔ Уроки не в записи! 4 живых эфиров на протяжении 8 дней. (Запись для тех, кто не сможет присутствовать, будет);</li>
+                    <li>✔ Обратная связь от меня в общем чате только от меня. Никаких кураторов;</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- БЛОК 3 (эфиры 1 и 2) -->
+        <div class="block fade-up" id="block3">
+            <h3>1 эфир: «Терпеть нельзя расстаться»<br>Где поставите запятую?</h3>
+            <div class="quote">«Он не плохой, но мне рядом с ним пусто»<br>«Мы не ругаемся, но и не близки»</div>
+            <p><strong>После эфира вы поймете:</strong></p>
+            <ul class="list">
+                <li>— Почему ты застряла в состоянии «уйти/остаться»</li>
+                <li>— Критерии «плохого» брака (через факты, не ощущения)</li>
+                <li>— Что на самом деле называется любовью (и чем она не является)</li>
+                <li>— Самое разрушительное состояние — одиночество вдвоём</li>
+                <li>— Где проходит грань: кризис или уже тупик</li>
+            </ul>
+            <hr>
+            <h3>2 эфир: «Он абьюзер или мне кажется? Или это Я?<br>Разбор реальности без ярлыков»</h3>
+            <div class="quote">«Он сначала холодный, потом идеальный. Я не понимаю, он меня любит или нет»</div>
+            <p><strong>После эфира вы поймете:</strong></p>
+            <ul class="list">
+                <li>— Почему все стали «нарциссами» (и где правда, а где мода)</li>
+                <li>— Абьюз: признаки, но без драматизации</li>
+                <li>— Эмоциональные качели: как они формируются</li>
+                <li>— Манипуляции: как они выглядят в реальности</li>
+                <li>— Разница между НРЛ и ПРЛ</li>
+                <li>— Самый неудобный вопрос: это он такой... или это динамика между вами?</li>
+            </ul>
+        </div>
+
+        <!-- БЛОК 4 (эфиры 3 и 4) -->
+        <div class="block fade-up" id="block4">
+            <h3>3 эфир: «Почему ты выбираешь именно такие отношения»</h3>
+            <div class="quote">«Мама терпела и я терплю»<br>«Любовь не равно страданию»</div>
+            <p><strong>После эфира вы поймете:</strong></p>
+            <ul class="list">
+                <li>— Как детско-родительские сценарии влияют на выбор партнёра</li>
+                <li>— Что на самом деле значит «простить» (а не забыть и терпеть)</li>
+                <li>— Почему ты терпишь / боишься уйти</li>
+                <li>— Как формируется страх одиночества</li>
+            </ul>
+            <hr>
+            <h3>4 эфир: «Почему ты теряешь себя — и как принять решение»</h3>
+            <div class="quote">«Ты не выбираешь, потому что боишься, а потому что «непонятно»»</div>
+            <p><strong>После эфира вы поймете:</strong></p>
+            <ul class="list">
+                <li>— Почему ты становишься «неинтересной» (и это не про внешность)</li>
+                <li>— Что такое любовь к себе без инфоцыганства</li>
+                <li>— Измены: что они на самом деле означают (жёстко, но честно)</li>
+                <li>— Почему страх держит сильнее, чем реальность</li>
+            </ul>
+        </div>
+
+        <!-- БЛОК КНОПОК (последний) -->
+        <div class="block last-block fade-up" style="text-align: center;">
+            <div class="buttons">
+                <button class="btn-primary" id="telegramBtn">Записаться в Telegram</button>
+                <button class="btn-secondary" id="maxBtn">Записаться в MAX</button>
+                <button class="btn-outline" id="closeBtn">Закрыть</button>
+            </div>
+            <footer>Вы перейдёте в чат, где сможете задать вопросы и оформить доступ к курсу.</footer>
+        </div>
+    </div>
+
+    <script>
+        if (window.WebApp) {
+            window.WebApp.ready();
+        }
+
+        const fadeElements = document.querySelectorAll('.fade-up');
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.1, rootMargin: "0px 0px -20px 0px" });
+        fadeElements.forEach(el => observer.observe(el));
+
+        function openLink(url) {
+            if (window.WebApp) {
+                window.WebApp.openLink(url);
+            } else {
+                window.open(url, '_blank');
+            }
+        }
+
+        // Замените ссылки на свои, если нужно
+        const TELEGRAM_URL = 'https://t.me/psycholog_lucia';
+        const MAX_URL = 'https://max.ru/u/f9LHodD0cOJkXMwRH-za-p7HVSTsI7vFrv3Lvnpi8nxAxzoz8hIGM150H7Y';
+
+        document.getElementById('telegramBtn').addEventListener('click', () => openLink(TELEGRAM_URL));
+        document.getElementById('maxBtn').addEventListener('click', () => openLink(MAX_URL));
+        document.getElementById('closeBtn').addEventListener('click', () => {
+            if (window.WebApp) window.WebApp.close();
+            else console.log('Закрытие доступно только внутри MAX');
+        });
+    </script>
+</body>
+</html>
