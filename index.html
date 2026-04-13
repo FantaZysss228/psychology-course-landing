@@ -37,7 +37,13 @@
             background: transparent;
         }
 
-        /* Картинка на всю ширину контейнера, высота автоматически */
+            /* Разделители между блоками (включая 2-3) */
+            .block:not(:first-child) {
+                border-top: 1px solid rgba(255, 255, 255, 0.6);
+            }
+        /* Больше не убираем линию между 2 и 3, оставляем как у всех */
+
+        /* Картинка на всю ширину контейнера */
         .main-image {
             width: 100%;
             display: block;
@@ -48,7 +54,7 @@
         .first-block {
             border-top-left-radius: 32px;
             border-top-right-radius: 32px;
-            text-align: center; /* центрирование всего содержимого первого блока */
+            text-align: center;
         }
 
         .last-block {
@@ -56,26 +62,35 @@
             border-bottom-right-radius: 32px;
         }
 
-        /* Стили для первого блока с разными шрифтами */
+        /* Стили для первой строки "это про тебя" */
+        .title-line {
+            display: flex;
+            justify-content: center;
+            align-items: baseline;
+            gap: 0.5rem;
+            flex-wrap: wrap;
+            margin-bottom: 12px;
+        }
+
         .title-pattaya {
             font-family: 'Pattaya', cursive;
-            font-size: 2rem;
+            font-size: 2.2rem;
             font-weight: normal;
-            margin-bottom: 0;
             line-height: 1.2;
         }
 
         .title-roboto {
             font-family: 'Roboto Condensed', sans-serif;
-            font-size: 2rem;
+            font-size: 2.2rem;
             font-weight: 700;
-            margin-bottom: 12px;
+            line-height: 1.2;
         }
 
+        /* Остальные стили первого блока */
         .subtitle-poiret {
             font-family: 'Poiret One', cursive;
             font-size: 1.1rem;
-            font-weight: 500;
+            font-weight: 700;
             margin-bottom: 16px;
         }
 
@@ -116,13 +131,43 @@
             border-left: 4px solid #d97a2b;
         }
 
+        /* Списки с тире (без точек) */
         .list {
             margin: 12px 0;
-            padding-left: 20px;
+            padding-left: 0;
+            list-style: none;
         }
 
             .list li {
                 margin-bottom: 8px;
+                padding-left: 1rem;
+                position: relative;
+            }
+
+                .list li::before {
+                    content: "—";
+                    position: absolute;
+                    left: 0;
+                    color: inherit;
+                }
+
+        /* Специальный стиль для списка в блоке ВАЖНО: только одна галочка */
+        .important ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .important li {
+            margin-bottom: 8px;
+            position: relative;
+            padding-left: 1.5rem;
+        }
+
+            .important li::before {
+                content: "✔";
+                position: absolute;
+                left: 0;
+                color: #d97a2b;
             }
 
         .important {
@@ -135,10 +180,6 @@
             .important p {
                 font-weight: 600;
                 margin-bottom: 8px;
-            }
-
-            .important ul {
-                padding-left: 20px;
             }
 
         hr {
@@ -211,15 +252,16 @@
 </head>
 <body>
     <div class="feed">
-        <!-- КАРТИНКА на всю ширину, без поворота -->
         <img src="main_image.png" alt="Психолог" class="main-image fade-up" id="mainImg">
 
-        <!-- БЛОК 1 с кастомными шрифтами и центрированием -->
+        <!-- БЛОК 1 -->
         <div class="block first-block fade-up" id="block1">
-            <div class="title-pattaya">это</div>
-            <div class="title-roboto">про тебя</div>
+            <div class="title-line">
+                <div class="title-pattaya">это</div>
+                <div class="title-roboto">про тебя</div>
+            </div>
             <div class="subtitle-poiret">Курс для женщин, которые запутались в отношениях и устали жить в состоянии «терпеть или уходить»</div>
-            <div class="text-great">Этот курс не для всех!<br>Он для тех, кто готов(а) взять на себя ответственность, а не продолжать надеяться, что всё решится само.</div>
+            <div class="text-great">Этот курс не для всех!<br>Он для тех, кто готов взять на себя ответственность, а не продолжать надеяться, что всё решится само.</div>
         </div>
 
         <!-- БЛОК 2 -->
@@ -235,9 +277,9 @@
             <div class="important">
                 <p><strong>ВАЖНО:</strong></p>
                 <ul>
-                    <li>✔ Только научный подход, так как я психолог с научной степенью. Без эзотерики и кармы рода. Объясню сочетание нейробиологии и вашего поведения в жизни;</li>
-                    <li>✔ Уроки не в записи! 4 живых эфиров на протяжении 8 дней. (Запись для тех, кто не сможет присутствовать, будет);</li>
-                    <li>✔ Обратная связь от меня в общем чате только от меня. Никаких кураторов;</li>
+                    <li>Только научный подход, так как я психолог с научной степенью. Без эзотерики и кармы рода. Объясню сочетание нейробиологии и вашего поведения в жизни;</li>
+                    <li>Уроки не в записи! 4 живых эфиров на протяжении 8 дней. (Запись для тех, кто не сможет присутствовать, будет);</li>
+                    <li>Обратная связь от меня в общем чате только от меня. Никаких кураторов;</li>
                 </ul>
             </div>
         </div>
@@ -284,18 +326,18 @@
             <div class="quote">«Ты не выбираешь, потому что боишься, а потому что «непонятно»»</div>
             <p><strong>После эфира вы поймете:</strong></p>
             <ul class="list">
-                <li>— Почему ты становишься «неинтересной» (и это не про внешность)</li>
+                <li>— Почему ты становишься «неинтересной» (и это не про внешность)<li>
                 <li>— Что такое любовь к себе без инфоцыганства</li>
                 <li>— Измены: что они на самом деле означают (жёстко, но честно)</li>
                 <li>— Почему страх держит сильнее, чем реальность</li>
             </ul>
         </div>
 
-        <!-- БЛОК КНОПОК (последний) -->
+        <!-- БЛОК КНОПОК -->
         <div class="block last-block fade-up" style="text-align: center;">
             <div class="buttons">
-                <button class="btn-primary" id="telegramBtn">Записаться в Telegram</button>
-                <button class="btn-secondary" id="maxBtn">Записаться в MAX</button>
+                <button class="btn-primary" id="telegramBtn">Записаться через Telegram</button>
+                <button class="btn-secondary" id="maxBtn">Записаться через MAX</button>
                 <button class="btn-outline" id="closeBtn">Закрыть</button>
             </div>
             <footer>Вы перейдёте в чат, где сможете задать вопросы и оформить доступ к курсу.</footer>
@@ -326,7 +368,6 @@
             }
         }
 
-        // Замените ссылки на свои, если нужно
         const TELEGRAM_URL = 'https://t.me/psycholog_lucia';
         const MAX_URL = 'https://max.ru/u/f9LHodD0cOJkXMwRH-za-p7HVSTsI7vFrv3Lvnpi8nxAxzoz8hIGM150H7Y';
 
