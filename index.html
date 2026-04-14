@@ -210,6 +210,13 @@
                 font-size: 1.4rem;
             }
 
+        .installment-note {
+            font-size: 0.8rem;
+            color: #555;
+            margin-top: 8px;
+            font-style: italic;
+        }
+
         .sub-list {
             list-style: none;
             padding-left: 1.5rem;
@@ -325,22 +332,16 @@
                 transform: translateY(0);
             }
 
-        /* Стили для нового блока об авторе */
-        .author-text {
+        /* Стили для блока расписания */
+        .schedule-text {
             text-align: center;
-            margin-bottom: 16px;
         }
 
-            .author-text p {
-                margin-bottom: 16px;
+            .schedule-text p {
+                margin-bottom: 8px;
             }
 
-        .bold-underline {
-            font-weight: 700;
-            text-decoration: underline;
-        }
-
-        .italic-text {
+        .italic-note {
             font-style: italic;
         }
     </style>
@@ -465,11 +466,38 @@
                 <div class="price">
                     Стоимость: <s>29.900</s> <strong>19.900</strong>
                 </div>
+                <div class="installment-note">
+                    *по запросу имеется рассрочка в обоих тарифах
+                </div>
             </div>
         </div>
 
-        <!-- НОВЫЙ БЛОК 6: Об авторе и цитата -->
+        <!-- БЛОК 6: Расписание -->
         <div class="block fade-up" id="block6">
+            <div class="schedule-text">
+                <p>Расписание курса:</p>
+                <p>Старт: 20 апреля</p>
+                <p>
+                    Занятия:<br>
+                    20.04 (пн) — 19:00-20:30<br>
+                    22.04 (ср) — 19:00-20:30<br>
+                    24.04 (пт) — 19:00-20:30<br>
+                    27.04 (пн) — 19:00-20:30
+                </p>
+                <p>
+                    Живые эфиры на платформе.<br>
+                    Запись всех эфиров будет доступна в этот же день.<br>
+                    Записи остаются у вас навсегда.
+                </p>
+                <p class="italic-note">
+                    При оплате тарифа с консультациями,<br>
+                    дату и время консультации обговариваем индивидуально в удобное вам время.
+                </p>
+            </div>
+        </div>
+
+        <!-- БЛОК 7: Автор и цитата -->
+        <div class="block fade-up" id="block7">
             <div class="author-text">
                 <p>
                     Автор курса: психолог Люция,<br>
