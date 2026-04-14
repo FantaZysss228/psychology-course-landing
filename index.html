@@ -37,11 +37,10 @@
             background: transparent;
         }
 
-            /* Разделители между блоками (включая 2-3) */
+            /* Разделители между блоками (все блоки имеют линию сверху, кроме первого) */
             .block:not(:first-child) {
                 border-top: 1px solid rgba(255, 255, 255, 0.6);
             }
-        /* Больше не убираем линию между 2 и 3, оставляем как у всех */
 
         /* Картинка на всю ширину контейнера */
         .main-image {
@@ -74,7 +73,7 @@
 
         .title-pattaya {
             font-family: 'Pattaya', cursive;
-            font-size: 2.2rem;
+            font-size: 2.6rem;
             font-weight: normal;
             line-height: 1.2;
         }
@@ -149,6 +148,84 @@
                     position: absolute;
                     left: 0;
                     color: inherit;
+                }
+
+        /* Стили для тарифов */
+        .tariff {
+            margin-bottom: 24px;
+        }
+
+            .tariff:last-child {
+                margin-bottom: 0;
+            }
+
+        .tariff-title {
+            font-size: 1.4rem;
+            font-weight: 700;
+            margin-bottom: 12px;
+        }
+
+        .tariff-list {
+            margin: 12px 0;
+            padding-left: 1.5rem;
+            list-style: none;
+        }
+
+            .tariff-list li {
+                margin-bottom: 8px;
+                position: relative;
+                padding-left: 0.5rem;
+            }
+
+                .tariff-list li::before {
+                    content: "";
+                    position: absolute;
+                    left: -1rem;
+                    color: inherit;
+                }
+
+            .tariff-list.numered {
+                list-style: decimal;
+                padding-left: 1.5rem;
+            }
+
+                .tariff-list.numered li::before {
+                    display: none;
+                }
+
+        .price {
+            margin-top: 16px;
+            font-size: 1.2rem;
+            font-weight: 600;
+        }
+
+            .price s {
+                color: #777;
+                margin-right: 12px;
+                font-size: 1rem;
+            }
+
+            .price strong {
+                color: #d97a2b;
+                font-size: 1.4rem;
+            }
+
+        .sub-list {
+            list-style: none;
+            padding-left: 1.5rem;
+            margin-top: 6px;
+        }
+
+            .sub-list li {
+                margin-bottom: 4px;
+                position: relative;
+                padding-left: 1rem;
+            }
+
+                .sub-list li::before {
+                    content: "—";
+                    position: absolute;
+                    left: 0;
                 }
 
         /* Специальный стиль для списка в блоке ВАЖНО: только одна галочка */
@@ -272,13 +349,13 @@
             <ul class="list">
                 <li>— что на самом деле происходит в ваших отношениях</li>
                 <li>— есть ли у них шанс или это уже тупик</li>
-                <li>— и как принять решение без самообмана</li>
+                <li>— и как принять решение без самообмана, о котором не будете жалеть</li>
             </ul>
             <div class="important">
                 <p><strong>ВАЖНО:</strong></p>
                 <ul>
                     <li>Только научный подход, так как я психолог с научной степенью. Без эзотерики и кармы рода. Объясню сочетание нейробиологии и вашего поведения в жизни;</li>
-                    <li>Уроки не в записи! 4 живых эфиров на протяжении 8 дней. (Запись для тех, кто не сможет присутствовать, будет);</li>
+                    <li>Уроки не в записи! <strong>4 живых</strong> эфиров на протяжении 8 дней. (Запись для тех, кто не сможет присутствовать, будет);</li>
                     <li>Обратная связь от меня в общем чате только от меня. Никаких кураторов;</li>
                 </ul>
             </div>
@@ -313,7 +390,7 @@
         <!-- БЛОК 4 (эфиры 3 и 4) -->
         <div class="block fade-up" id="block4">
             <h3>3 эфир: «Почему ты выбираешь именно такие отношения»</h3>
-            <div class="quote">«Мама терпела и я терплю»<br>«Любовь не равно страданию»</div>
+            <div class="quote">«Мама терпела и я терплю»<br>«Любовь <s>не равно</s> страданию»</div>
             <p><strong>После эфира вы поймете:</strong></p>
             <ul class="list">
                 <li>— Как детско-родительские сценарии влияют на выбор партнёра</li>
@@ -323,14 +400,53 @@
             </ul>
             <hr>
             <h3>4 эфир: «Почему ты теряешь себя — и как принять решение»</h3>
-            <div class="quote">«Ты не выбираешь, потому что боишься, а потому что «непонятно»»</div>
+            <div class="quote">«Ты не выбираешь, потому что боишься, и потому что «непонятно»»</div>
             <p><strong>После эфира вы поймете:</strong></p>
             <ul class="list">
-                <li>— Почему ты становишься «неинтересной» (и это не про внешность)<li>
+                <li>— Почему ты становишься «неинтересной» (и это не про внешность)</li>
                 <li>— Что такое любовь к себе без инфоцыганства</li>
                 <li>— Измены: что они на самом деле означают (жёстко, но честно)</li>
-                <li>— Почему страх держит сильнее, чем реальность</li>
+                <li>— Как твои гормоны влияют на отношения</li>
             </ul>
+        </div>
+
+        <!-- БЛОК 5: Тарифы -->
+        <div class="block fade-up" id="block5">
+            <!-- Тариф "Групповой" -->
+            <div class="tariff">
+                <div class="tariff-title">Групповой:</div>
+                <ul class="tariff-list numered" style="list-style: decimal; padding-left: 1.5rem;">
+                    <li>4 живых эфира в течение 8 дней;</li>
+                    <li>Чат с обратной связью от меня, где сможете задавать свои вопросы во время и после эфиров;</li>
+                    <li>Поддержка единомышленниц в чате;</li>
+                </ul>
+                <div class="price">
+                    Стоимость: <s>19.900</s> <strong>9.900</strong>
+                </div>
+            </div>
+
+            <hr>
+
+            <!-- Тариф "Групповой + консультации" -->
+            <div class="tariff">
+                <div class="tariff-title">Групповой + консультации</div>
+                <ul class="tariff-list numered" style="list-style: decimal; padding-left: 1.5rem;">
+                    <li>4 живых эфира в течение 8 дней;</li>
+                    <li>Чат с обратной связью от меня, где сможете задавать вопросы во время и после эфиров;</li>
+                    <li>Поддержка единомышленниц в чате;</li>
+                    <li>2 моих личных консультации во время курса.</li>
+                    <li>
+                        Запись эфира «Финансы по женски и самореализация», где разберете:
+                        <ul class="sub-list">
+                            <li>- Как сохранить отношения в период финансового кризиса в семье;</li>
+                            <li>- Как увеличить свой денежный потенциал без медитаций, а научно;</li>
+                        </ul>
+                    </li>
+                </ul>
+                <div class="price">
+                    Стоимость: <s>29.900</s> <strong>19.900</strong>
+                </div>
+            </div>
         </div>
 
         <!-- БЛОК КНОПОК -->
