@@ -42,7 +42,6 @@
                 border-top: 1px solid rgba(255, 255, 255, 0.6);
             }
 
-        /* Картинка на всю ширину контейнера */
         .main-image {
             width: 100%;
             display: block;
@@ -85,7 +84,6 @@
             line-height: 1.2;
         }
 
-        /* Остальные стили первого блока */
         .subtitle-poiret {
             font-family: 'Poiret One', cursive;
             font-size: 1.1rem;
@@ -99,15 +97,10 @@
             margin-top: 16px;
         }
 
-        /* Общие стили для остальных блоков */
         h1, h2, h3 {
             font-weight: 700;
             line-height: 1.2;
             margin-bottom: 12px;
-        }
-
-        h1 {
-            font-size: 2rem;
         }
 
         h2 {
@@ -130,7 +123,6 @@
             border-left: 4px solid #d97a2b;
         }
 
-        /* Списки с тире (без точек) */
         .list {
             margin: 12px 0;
             padding-left: 0;
@@ -150,7 +142,7 @@
                     color: inherit;
                 }
 
-        /* Стили для тарифов */
+        /* Тарифы */
         .tariff {
             margin-bottom: 24px;
         }
@@ -165,33 +157,10 @@
             margin-bottom: 12px;
         }
 
-        .tariff-list {
-            margin: 12px 0;
+        .tariff-list.numered {
+            list-style: decimal;
             padding-left: 1.5rem;
-            list-style: none;
         }
-
-            .tariff-list li {
-                margin-bottom: 8px;
-                position: relative;
-                padding-left: 0.5rem;
-            }
-
-                .tariff-list li::before {
-                    content: "";
-                    position: absolute;
-                    left: -1rem;
-                    color: inherit;
-                }
-
-            .tariff-list.numered {
-                list-style: decimal;
-                padding-left: 1.5rem;
-            }
-
-                .tariff-list.numered li::before {
-                    display: none;
-                }
 
         .price {
             margin-top: 16px;
@@ -214,7 +183,7 @@
             font-size: 0.8rem;
             color: #555;
             margin-top: 8px;
-            font-style: italic;
+            text-align: center;
         }
 
         .sub-list {
@@ -235,7 +204,7 @@
                     left: 0;
                 }
 
-        /* Специальный стиль для списка в блоке ВАЖНО: только одна галочка */
+        /* Стиль для блока ВАЖНО */
         .important ul {
             list-style: none;
             padding-left: 0;
@@ -332,17 +301,22 @@
                 transform: translateY(0);
             }
 
-        /* Стили для блока расписания */
-        .schedule-text {
+        /* Стили для блока расписания и блока автора — центрирование */
+        .schedule-text, .author-text {
             text-align: center;
         }
 
-            .schedule-text p {
-                margin-bottom: 8px;
+            .schedule-text p, .author-text p {
+                margin-bottom: 12px;
             }
 
-        .italic-note {
+        .italic-text {
             font-style: italic;
+        }
+
+        .bold-underline {
+            font-weight: 700;
+            text-decoration: underline;
         }
     </style>
     <script src="https://st.max.ru/js/max-web-app.js"></script>
@@ -466,32 +440,33 @@
                 <div class="price">
                     Стоимость: <s>29.900</s> <strong>19.900</strong>
                 </div>
-                <div class="installment-note">
-                    *по запросу имеется рассрочка в обоих тарифах
-                </div>
+                <div class="installment-note">*по запросу имеется рассрочка в обоих тарифах</div>
             </div>
         </div>
 
-        <!-- БЛОК 6: Расписание -->
+        <!-- БЛОК 6: Расписание курса -->
         <div class="block fade-up" id="block6">
             <div class="schedule-text">
-                <p>Расписание курса:</p>
+                <p><strong>Расписание курса:</strong></p>
                 <p>Старт: 20 апреля</p>
                 <p>
                     Занятия:<br>
-                    20.04 (пн) — 19:00-20:30<br>
-                    22.04 (ср) — 19:00-20:30<br>
-                    24.04 (пт) — 19:00-20:30<br>
-                    27.04 (пн) — 19:00-20:30
+                    20.04 (пн) - 19:00-20:30<br>
+                    22.04 (ср) - 19:00-20:30<br>
+                    24.04 (пт) - 19:00-20:30<br>
+                    27.04 (пн) - 19:00-20:30
                 </p>
                 <p>
                     Живые эфиры на платформе.<br>
-                    Запись всех эфиров будет доступна в этот же день.<br>
+                    Запись всех эфиров будет<br>
+                    доступна в этот же день.<br>
                     Записи остаются у вас навсегда.
                 </p>
-                <p class="italic-note">
+                <p class="italic-text">
                     При оплате тарифа с консультациями,<br>
-                    дату и время консультации обговариваем индивидуально в удобное вам время.
+                    дату и время консультации<br>
+                    обговариваем индивидуально в<br>
+                    удобное вам время.
                 </p>
             </div>
         </div>
@@ -509,7 +484,7 @@
                     и ваше поведение.
                 </p>
                 <p class="bold-underline">
-                    «Вы не обязаны сохранять отношения.<br>
+                    «Вы не обязаны сохранять или прекращать отношения.<br>
                     Но вы точно можете перестать<br>
                     жить в состоянии неопределённости»
                 </p>
